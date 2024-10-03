@@ -1,11 +1,11 @@
 import React from 'react';
-import './About.css'; // Import the CSS file for styles
-
+import './About.css'; 
+import abimg from "../assets/about.png"
 const About: React.FC = () => {
   return (
     <div className="about-container">
       <div className="about-image">
-        <img src="/src/about.png" alt="About Me" />
+        <img src={abimg} alt="About Me" />
       </div>
       <div className="about-text">
         <h1>About Me</h1>

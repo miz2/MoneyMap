@@ -1,7 +1,7 @@
 import React from 'react';
 import './Welcome.css'; // Import the new stylesheet
 import { useAuth0, RedirectLoginOptions } from '@auth0/auth0-react'; // Import the Auth0 hook and type
-
+import welcome from "../assets/welcome.jpg"
 const Welcome: React.FC = () => {
   const { loginWithRedirect } = useAuth0(); // Destructure the loginWithRedirect function
 
@@ -16,7 +16,7 @@ const Welcome: React.FC = () => {
     <div className="welcome-page">
       <div className="content-container">
         <div className="image-section">
-          <img src='welcome.jpg' alt="Finance Tracker" className="welcome-image" />
+          <img src={welcome} alt="Finance Tracker" className="welcome-image" />
         </div>
         <div className="text-section">
           <h1>Welcome to the Finance Tracker</h1>
