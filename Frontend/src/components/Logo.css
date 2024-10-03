@@ -1,0 +1,22 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cursive', 'Signature', sans-serif; /* Customize your font */
+    font-size: 2rem; /* Adjust font size as needed */
+  }
+  
+  .logo-left, .logo-right {
+    font-size: 2.5rem; /* Adjust for angle brackets */
+    font-weight: bold;
+    color: fff; 
+  }
+  
+  .logo-name {
+    margin: 0 10px;
+    color: #fff; /* Adjust the text color */
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-family: 'Dancing Script', cursive; /* Choose a similar font style */
+  }

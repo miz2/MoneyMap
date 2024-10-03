@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary-color: #ffffff; /* Main text and accent color */
+  --secondary-color: #31c1f0; /* Accent color for buttons and highlights */
+  --background-color: #0a0f1e; /* Dark background color */
+  --text-color: #f0f0f0; /* Light text color */
+  --button-hover-color: #1a73e8; /* Hover color for buttons */
+  --spacing: 40px; /* Space between image and text */
+  --divider-width: 20px; /* Width of the space between sections */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', Segoe UI, Tahoma, sans-serif;
+}
+
+.welcome-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('path/to/your/background-image.png'); /* Use actual path if a background image is used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.welcome-page .content-container {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(10, 15, 30, 0.8); /* Semi-transparent dark background for text */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  padding: var(--spacing); /* Add padding inside the container */
+}
+
+.welcome-page .image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: var(--divider-width); /* Space between image and text */
+}
+
+.welcome-page .welcome-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.welcome-page .text-section {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+}
+
+.welcome-page .text-section h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.welcome-page .text-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.welcome-page .text-section .features-section {
+  margin-bottom: 30px;
+}
+
+.welcome-page .text-section .features-section h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.welcome-page .text-section .features-section ul {
+  list-style-type: none;
+}
+
+.welcome-page .text-section .features-section li {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.welcome-page .text-section .get-started-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.welcome-page .text-section .get-started-button:hover {
+  background-color: var(--button-hover-color);
+}
+
+/* Responsive styles for screens up to 815px */
+@media (max-width: 815px) {
+  .welcome-page {
+    height: auto;
+    padding: 20px;
+  }
+
+  .welcome-page .content-container {
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 90px;
+  }
+
+  .welcome-page .image-section {
+    margin-right: 0;
+    margin-bottom: var(--divider-width); /* Space below the image */
+    margin-top: 0px;
+  }
+
+  .welcome-page .text-section {
+    padding: 10px;
+  }
+
+  .welcome-page .text-section h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-page .text-section p {
+    font-size: 1rem;
+  }
+
+  .welcome-page .text-section .features-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-page .text-section .features-section li {
+    font-size: 0.9rem;
+  }
+
+  .welcome-page .text-section .get-started-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
