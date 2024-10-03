@@ -37,7 +37,7 @@ export const InvestmentsProvider: React.FC<{ children: React.ReactNode }> = ({ c
     }
 
     try {
-      const response = await axios.get(`http://localhost:5001/investments/getAllByUserID/${user.sub}`);
+      const response = await axios.get(`https://moneymap-1.onrender.com/investments/getAllByUserID/${user.sub}`);
       setInvestments(response.data); // Set investments with fetched data
     } catch (error) {
       console.error('Error fetching investments:', error);
@@ -52,7 +52,7 @@ export const InvestmentsProvider: React.FC<{ children: React.ReactNode }> = ({ c
     try {
       console.log('Adding investment for user:', user.sub);
       const response = await axios.post(
-        'http://localhost:5001/investments',
+        'https://moneymap-1.onrender.com/investments',
         { ...investment, userId: user.sub }, // Include user ID in the payload
         {
           headers: {
@@ -82,7 +82,7 @@ export const InvestmentsProvider: React.FC<{ children: React.ReactNode }> = ({ c
     try {
       console.log(`Deleting investment with ID: ${_id}`);
       // Ensure the URL correctly includes the investment ID
-      const response = await axios.delete(`http://localhost:5001/investments/${_id}`);
+      const response = await axios.delete(`https://moneymap-1.onrender.com/investments/${_id}`);
       console.log("Delete response:", response.data);
       // Optionally re-fetch investments or update state
       await fetchInvestments();
