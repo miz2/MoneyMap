@@ -32,7 +32,7 @@ export const FinancialRecordsProvider: React.FC<FinancialRecordsProviderProps> =
   const fetchRecords = async () => {
     if (!isAuthenticated || !user || !user.sub) return; // Ensure user and user.sub (user ID) are available
     try {
-      const response = await fetch(`http://localhost:5001/financial-records/getAllByUserID/${user.sub}`);
+      const response = await fetch(`https://moneymap-1.onrender.com/financial-records/getAllByUserID/${user.sub}`);
       
       if (response.ok) {
         const records = await response.json();
@@ -51,7 +51,7 @@ export const FinancialRecordsProvider: React.FC<FinancialRecordsProviderProps> =
 
   const addRecord = async (record: FinancialRecord) => {
     try {
-      const response = await fetch("http://localhost:5001/financial-records", {
+      const response = await fetch("https://moneymap-1.onrender.com/financial-records", {
         method: "POST",
         body: JSON.stringify(record),
         headers: {
@@ -72,7 +72,7 @@ export const FinancialRecordsProvider: React.FC<FinancialRecordsProviderProps> =
 
   const updateRecord = async (id: string, newRecord: FinancialRecord) => {
     try {
-      const response = await fetch(`http://localhost:5001/financial-records/${id}`, {
+      const response = await fetch(`https://moneymap-1.onrender.com/financial-records/${id}`, {
         method: "PUT",
         body: JSON.stringify(newRecord),
         headers: {
@@ -93,7 +93,7 @@ export const FinancialRecordsProvider: React.FC<FinancialRecordsProviderProps> =
 
   const deleteRecord = async (id: string) => {
     try {
-      const response = await fetch(`http://localhost:5001/financial-records/${id}`, {
+      const response = await fetch(`https://moneymap-1.onrender.com/financial-records/${id}`, {
         method: "DELETE",
       });
 
