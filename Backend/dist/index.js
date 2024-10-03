@@ -13,7 +13,7 @@ const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
 // Middleware to enable CORS
 app.use((0, cors_1.default)({
-    origin: "http://localhost:5173", // Adjust this to match the origin of your frontend
+    origin: "https://moneymap-frontend.onrender.com/", // Adjust this to match the origin of your frontend
     methods: "GET,POST,PUT,DELETE", // Allowed methods
     credentials: true // Allow cookies to be sent with requests
 }));
