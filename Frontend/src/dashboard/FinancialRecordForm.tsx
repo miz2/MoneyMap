@@ -1,31 +1,31 @@
-import { useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react"; // Import Auth0 hook
-import { useFinancialRecords } from "../context/financial-record-context.tsx";
-import { useSnackbar } from "notistack"; // Import useSnackbar hook
+import { useState, useCallback, memo } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useFinancialRecords } from "../context/financial-record-context";
+import { useSnackbar } from "notistack";
 import "./FinancialRecordForm.css";
 
-export const FinancialRecordForm = () => {
+const FinancialRecordForm = () => {
   const [description, setDescription] = useState<string>("");
   const [amount, setAmount] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [paymentMethod, setPaymentMethod] = useState<string>("");
-  const [date, setDate] = useState<string>(""); // Add date state
-  const { addRecord } = useFinancialRecords();
-  const { enqueueSnackbar } = useSnackbar(); // useSnackbar hook
-  const { user } = useAuth0(); // Use Auth0 hook to get user information
+  const [date, setDate] = useState<string>("");
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const { addRecord } = useFinancialRecords();
+  const { enqueueSnackbar } = useSnackbar();
+  const { user } = useAuth0();
+
+  const handleSubmit = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!user?.sub) {
       enqueueSnackbar("User not authenticated!", { variant: "error" });
       return;
     }
 
-    const formattedAmount = parseFloat(amount.replace(/,/g, ''));
-
+    const formattedAmount = parseFloat(amount.replace(/,/g, ""));
     const newRecord = {
-      userId: user.sub, // Use `user.sub` for the unique user ID in Auth0
-      date: date || new Date().toISOString(), // Use selected date or current date
+      userId: user.sub,
+      date: date || new Date().toISOString(),
       description,
       amount: formattedAmount,
       category,
@@ -38,21 +38,19 @@ export const FinancialRecordForm = () => {
       setAmount("");
       setCategory("");
       setPaymentMethod("");
-      setDate(""); // Reset date
+      setDate("");
       enqueueSnackbar("Record added successfully!", { variant: "success" });
     } catch (error) {
       enqueueSnackbar("Failed to add record.", { variant: "error" });
     }
-  };
+  }, [user, amount, date, description, category, paymentMethod, addRecord, enqueueSnackbar]);
 
-  // Format amount field value
-  const handleAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    let value = event.target.value;
-    value = value.replace(/[^0-9.]/g, ''); // Remove non-digit characters except for the decimal point
-    const parts = value.split('.');
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    setAmount(parts.join('.'));
-  };
+  const handleAmountChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    let value = event.target.value.replace(/[^0-9.]/g, "");
+    const parts = value.split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    setAmount(parts.join("."));
+  }, []);
 
   return (
     <div className="form-container">
@@ -113,7 +111,7 @@ export const FinancialRecordForm = () => {
         <div className="form-field">
           <label>Date:</label>
           <input
-            type="date" // Native HTML date input
+            type="date"
             required
             className="input"
             value={date}
@@ -127,3 +125,5 @@ export const FinancialRecordForm = () => {
     </div>
   );
 };
+
+export default memo(FinancialRecordForm);
