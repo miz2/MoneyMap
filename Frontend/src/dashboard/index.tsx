@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { FinancialRecordForm } from './FinancialRecordForm';
-import { FinancialRecordList } from './FinancialRecordList';
+import  FinancialRecordForm  from './FinancialRecordForm';
+import FinancialRecordList  from './FinancialRecordList';
 import { useFinancialRecords } from '../context/financial-record-context';
 import CategorySpendingChart from './CategorySpendingChart'; // Pie Chart
 import LineSpendingChart from './LineSpendingChart'; // Line Chart
