@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.name {
+  font-family: "Playfair Display", serif;
+  font-size: 55px;
+  font-style: italic;
+}
+
+#spend {
+  font-family: "Playfair Display", serif;
+  font-size: 35px; /* Adjust size as needed */
+  margin: 0 auto 34px; /* Center horizontally, with bottom margin */
+  text-align: center; /* Center text within its container */
+  width: fit-content; /* Adjust width based on content */
+}
+
+.filters{
+  display: flex;
+  /* justify-content: ; */
+}
+.Select-Me{
+  margin-right: 23px;
+}
+.analysis {
+  margin-top: 20px;
+  margin-bottom: 200px;
+  margin-left: -20px;
+}
+
+.dashboard-container {
+  padding: 20px;
+}
+
+.welcome-message {
+  margin-bottom: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+  /* align-items: flex-start; */
+}
+
+.form-section {
+  margin: 0 auto;
+  
+  margin-right: 20px;
+}
+
+.auth-prompt {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border-radius: 10px;
+}
+
+/* Flexbox layout for charts */
+.charts-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #1e1e1e;
+}
+
+.chart-container {
+  width: 30%;
+  min-width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Ensures alignment at the same level */
+}
+.chart-container-over {
+  width: 30%;
+  height: 60vh;
+  min-width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Ensures alignment at the same level */
+}
+.chart-title {
+  margin-bottom: auto; /* Ensures consistent spacing at the top */
+}
+
+/* Adjust for Spending Over Time chart */
+#spending-over-time-chart {
+  transform: translateY(20px); /* Pushes the chart down slightly to align */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .charts-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chart-container {
+    width: 80%;
+    margin: 20px 0;
+  }
+}

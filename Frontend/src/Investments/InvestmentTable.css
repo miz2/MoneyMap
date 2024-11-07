@@ -1,0 +1,63 @@
+/* src/Investments/InvestmentTable.css */
+
+/* Container for the table to ensure proper layout */
+.investment-table-container {
+  overflow-x: auto; /* Ensure table is scrollable on small screens */
+  margin-top: 20px; /* Ensure some space from the navbar */
+}
+
+/* Table styling */
+.investment-table {
+  width: 100%; /* Ensure the table takes full width */
+  border-collapse: collapse;
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Table headers and cells */
+.investment-table th, .investment-table td {
+  padding: 12px 15px;
+  border: 1px solid #444;
+}
+
+/* Header styling */
+.investment-table th {
+  background-color: #444;
+  font-weight: bold;
+}
+
+/* Alternate row colors */
+.investment-table tr:nth-child(even) {
+  background-color: #2c2c2c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .investment-table th, .investment-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .investment-table th, .investment-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+
+/* Ensure table does not overlap navbar */
+body {
+  margin: 0; /* Remove default margin */
+}
+
+
+/* Add margin to content below the navbar */
+.main-content {
+  margin-top: 60px; /* Adjust based on the height of your navbar */
+}
+.export-button2{
+  
+}

@@ -1,0 +1,241 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure body takes full height */
+  position: relative;
+}
+
+/* Main container for dashboard content */
+.dashboard-container {
+  position: absolute;
+  top: 50px; 
+  left: 50%;
+  transform: translateX(-50%); 
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%; 
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-height: calc(100vh - 100px); 
+}
+
+/* Welcome message styling */
+.welcome-message {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Flex container for the form and table */
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* Form section styling */
+.form-section {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.form-container {
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.button {
+  background-color: #00bfff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0099cc;
+}
+
+.table-div{
+  margin-right: 0.1rem;
+  width: 100%;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #444;
+  padding: 10px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+}
+
+td {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+/* Action buttons for 'Generate Graph' and 'Export' */
+.action-buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.action-buttons .button {
+  flex: 1 1 45%;
+}
+
+/* Delete button styles */
+.delete-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #e0e0e0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.delete-button:hover {
+  color: red;
+}
+
+/* Custom Export button style */
+.export-button {
+  height: 30%;
+  margin-top: 1rem;
+  margin-left: 76vw;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-section {
+    width: 100%;
+  }
+
+  .dashboard-container {
+    padding: 10px;
+  }
+
+  .button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .welcome-message {
+    font-size: 1.2rem;
+  }
+}
+
+/* Media query for even smaller screens */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 15px;
+  }
+
+  .input {
+    padding: 8px;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  .table-div{
+    margin-left: -8.5rem;
+    
+  }
+}
+/* For small screens below 480px */
+/* For small screens below 480px */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 15px;
+  }
+
+  .input {
+    padding: 8px;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  /* Wrap the table in a container with overflow properties */
+  .table-div {
+    margin-left: 0; /* Remove negative margin */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile devices */
+    width: 100%; /* Ensure full width on small screens */
+  }
+
+  table {
+    width: 100%; /* Let the table take full width */
+    min-width: 100%; /* Ensure the table spans full width of the container */
+  }
+}
+

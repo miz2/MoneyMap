@@ -1,0 +1,38 @@
+/* src/dashboard/Investments.css */
+.investment-container {
+  display: flex;
+  flex-direction: row; /* Align form and table side by side */
+  gap: 20px; /* Add space between form and table */
+  padding: 20px;
+  margin-top: 250px; /* Space below the fixed navbar */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.investment-css {
+  /* margin-top: 250px; */
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  /* margin-bottom: 20px; */
+  color: var(--text-color); /* Use a variable or adjust color as needed */
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .investment-container {
+    flex-direction: column; /* Stack form and table vertically */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Additional styling for form and table if needed */
+.investment-form,
+.investment-table {
+  background-color: #fff; /* White background for form and table */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px;
+  flex: 1; /* Allow items to grow and fill available space */
+}
