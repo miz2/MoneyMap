@@ -43,7 +43,7 @@ export const InvestmentsProvider: React.FC<{ children: React.ReactNode }> = ({ c
     }
 
     try {
-      const { data } = await axios.get(`http://localhost:5001/investments/getAllByUserID/${userId}`);
+      const { data } = await axios.get(`https://moneymap-1.onrender.com/investments/getAllByUserID/${userId}`);
       setInvestments(data);
     } catch (error) {
       handleError('Error fetching investments:', error);
@@ -56,7 +56,7 @@ export const InvestmentsProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
     try {
       const response = await axios.post(
-        'http://localhost:5001/investments',
+        'https://moneymap-1.onrender.com/investments',
         { ...investment, userId },
         { headers: { 'Content-Type': 'application/json' } }
       );
@@ -80,7 +80,7 @@ export const InvestmentsProvider: React.FC<{ children: React.ReactNode }> = ({ c
     }
 
     try {
-      const response = await axios.delete(`http://localhost:5001/investments/${_id}`);
+      const response = await axios.delete(`https://moneymap-1.onrender.com/investments/${_id}`);
       console.log('Delete response:', response.data);
       await fetchInvestments();
     } catch (error) {
