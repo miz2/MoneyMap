@@ -40,7 +40,7 @@ export const FinancialRecordsProvider: React.FC<FinancialRecordsProviderProps> =
     if (!userId) return;
 
     try {
-      const response = await fetch(`http://localhost:5001/financial-records/getAllByUserID/${userId}`);
+      const response = await fetch(`https://moneymap-1.onrender.com/financial-records/getAllByUserID/${userId}`);
       if (response.ok) {
         const data = await response.json();
         setRecords(data);
@@ -58,7 +58,7 @@ export const FinancialRecordsProvider: React.FC<FinancialRecordsProviderProps> =
 
   const addRecord = useCallback(async (record: FinancialRecord) => {
     try {
-      const response = await fetch("http://localhost:5001/financial-records", {
+      const response = await fetch("https://moneymap-1.onrender.com/financial-records", {
         method: "POST",
         body: JSON.stringify(record),
         headers: { "Content-Type": "application/json" },
@@ -77,7 +77,7 @@ export const FinancialRecordsProvider: React.FC<FinancialRecordsProviderProps> =
 
   const updateRecord = useCallback(async (id: string, newRecord: FinancialRecord) => {
     try {
-      const response = await fetch(`http://localhost:5001/financial-records/${id}`, {
+      const response = await fetch(`https://moneymap-1.onrender.com/financial-records/${id}`, {
         method: "PUT",
         body: JSON.stringify(newRecord),
         headers: { "Content-Type": "application/json" },
@@ -96,7 +96,7 @@ export const FinancialRecordsProvider: React.FC<FinancialRecordsProviderProps> =
 
   const deleteRecord = useCallback(async (id: string) => {
     try {
-      const response = await fetch(`http://localhost:5001/financial-records/${id}`, { method: "DELETE" });
+      const response = await fetch(`https://moneymap-1.onrender.com/financial-records/${id}`, { method: "DELETE" });
 
       if (response.ok) {
         setRecords((prev) => prev.filter((record) => record._id !== id));
