@@ -4,7 +4,7 @@ const API_BASE_URL = "https://moneymap-1.onrender.com";
 
 export const fetchRecordsByUserAndMonth = async (userId: string, month: string, year: string) => {
   try {
-    const { data } = await axios.get(`${API_BASE_URL}/getByUserAndMonth/${userId}`, {
+    const { data } = await axios.get(`${API_BASE_URL}getByUserAndMonth/${userId}`, {
       params: { month, year },
     });
 
